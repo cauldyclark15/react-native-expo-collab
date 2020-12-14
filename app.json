@@ -1,0 +1,12 @@
+{
+  "name": "react-native-expo-collab",
+  "displayName": "react-native-expo-collab",
+  "expo": {
+    "name": "react-native-expo-collab",
+    "slug": "react-native-expo-collab",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
