@@ -1,19 +1,29 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { ApolloProvider } from "@apollo/react-hooks";
+import { StyleSheet, Text, View } from "react-native";
+import { client } from "./lib/apollo";
 
-export default function App() {
+function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>hey</Text>
     </View>
+  );
+}
+
+export default function ClientApp() {
+  return (
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
