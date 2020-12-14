@@ -1,15 +1,14 @@
-import { split, ApolloLink } from "apollo-link";
+import { ApolloLink } from "apollo-link";
 import { setContext } from "apollo-link-context";
 import { createHttpLink } from "apollo-link-http";
 import { onError } from "apollo-link-error";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 const httpLink = createHttpLink({ uri: "https://api.github.com/graphql" });
-const authLink = setContext((_, { headers }) => {
+const authLink = setContext(() => {
   return {
     headers: {
-      ...headers,
-      Authorization: "bearer d4a80ce7aa748543e84b23cebdcfc7256492f119",
+      Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
     },
   };
 });
